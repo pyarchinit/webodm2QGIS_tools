@@ -1,0 +1,19 @@
+[general]
+name=WebODM2QGIS-tools
+qgisMinimumVersion=4.0
+qgisMaximumVersion=4.99
+supportsQt6=True
+description=Elenca e importa in QGIS i prodotti di WebODM (ortofoto, quote, nuvole, foto, prospetti) con avvisi su CRS/EPSG
+about=Si collega a un server WebODM (anche l'app per Windows aperta sul PC), permette di scegliere progetto e task, di dare un nome e una cartella a ogni sessione di import e di caricare i prodotti come layer: ortofoto, quote, nuvole, punti di scatto delle foto (con apertura dell'originale), scatti e prospetti del plugin webodm-model-tools. Avvisa su EPSG, georiferimento e CRS locali; include un visualizzatore WebODM. Sola lettura sul server. Realizzato da Luca Mandolesi di Flyoveracademy.it, scritto interamente con Claude Code (Claude Sonnet e Opus). SPERIMENTALE, per QGIS 4: puo' fare danni (scrive file nella cartella scelta, puo' cambiare il CRS del progetto, salva la password nel gestore di autenticazione). Nessuna garanzia, uso a proprio rischio. Licenza GPL v2 o successiva.
+version=0.1.0
+author=Luca Mandolesi (Flyoveracademy.it)
+tracker=https://github.com/pyarchinit/webodm2QGIS_tools/issues
+repository=https://github.com/pyarchinit/webodm2QGIS_tools
+homepage=https://flyoveracademy.it
+category=Plugins
+icon=resources/icons/webodm2qgis.svg
+experimental=True
+deprecated=False
+tags=webodm,odm,drone,orthophoto,point cloud,photogrammetry
+
+changelog=0.1.0 - prima versione: connessione, progetto/task, sessione di import, prodotti, avvisi CRS, punti di scatto con apertura dell'originale, scatti e prospetti, visualizzatore web.

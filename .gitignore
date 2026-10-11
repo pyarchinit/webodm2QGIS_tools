@@ -1,0 +1,8 @@
+# build e file temporanei
+__pycache__/
+*.pyc
+*.zip
+tests/_gui_out*/
+*.part
+.vscode/
+.idea/
