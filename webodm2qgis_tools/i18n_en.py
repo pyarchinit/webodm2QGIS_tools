@@ -358,4 +358,11 @@ EN = {
     "Scrive file (TIFF, GeoPackage, VRT, ZIP estratti) nella cartella che scegli e puo' sovrascrivere file con lo stesso nome: scegli una cartella dedicata.": 'It writes files (TIFF, GeoPackage, VRT, extracted ZIPs) into the folder you choose and may overwrite files with the same name: choose a dedicated folder.',
     'Sperimentale.': 'Experimental.',
     'Licenza: GNU GPL versione 2 o successiva (come QGIS).': 'License: GNU GPL version 2 or later (same as QGIS).',
+    'Sfoglia...': 'Browse...',
+    'Sì': 'Yes',
+    'No': 'No',
+    'Chiudi': 'Close',
+    'info': 'info',
+    'attenzione': 'warning',
+    'blocco': 'blocking',
 }

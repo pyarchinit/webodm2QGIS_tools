@@ -327,3 +327,10 @@ Scritto interamente con <b>Claude Code</b> (modelli Claude Sonnet e Opus di Anth
 Scrive file (TIFF, GeoPackage, VRT, ZIP estratti) nella cartella che scegli e puo' sovrascrivere file con lo stesso nome: scegli una cartella dedicata. ||| Écrit des fichiers (TIFF, GeoPackage, VRT, ZIP extraits) dans le dossier que vous choisissez et peut écraser des fichiers du même nom : choisissez un dossier dédié. ||| Schreibt Dateien (TIFF, GeoPackage, VRT, entpackte ZIPs) in den gewählten Ordner und kann gleichnamige Dateien überschreiben: Wählen Sie einen eigenen Ordner. ||| Escribe archivos (TIFF, GeoPackage, VRT, ZIP extraídos) en la carpeta que elijas y puede sobrescribir archivos con el mismo nombre: elige una carpeta dedicada. ||| Grava arquivos (TIFF, GeoPackage, VRT, ZIPs extraídos) na pasta que você escolher e pode sobrescrever arquivos com o mesmo nome: escolha uma pasta dedicada.
 Sperimentale. ||| Expérimental. ||| Experimentell. ||| Experimental. ||| Experimental.
 Licenza: GNU GPL versione 2 o successiva (come QGIS). ||| Licence : GNU GPL version 2 ou ultérieure (comme QGIS). ||| Lizenz: GNU GPL Version 2 oder höher (wie QGIS). ||| Licencia: GNU GPL versión 2 o posterior (como QGIS). ||| Licença: GNU GPL versão 2 ou posterior (como o QGIS).
+Sfoglia... ||| Parcourir... ||| Durchsuchen... ||| Examinar... ||| Procurar...
+Sì ||| Oui ||| Ja ||| Sí ||| Sim
+No ||| Non ||| Nein ||| No ||| Não
+Chiudi ||| Fermer ||| Schließen ||| Cerrar ||| Fechar
+info ||| info ||| Info ||| info ||| info
+attenzione ||| attention ||| Achtung ||| atención ||| atenção
+blocco ||| blocage ||| Blockade ||| bloqueo ||| bloqueio

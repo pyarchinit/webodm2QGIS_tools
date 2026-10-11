@@ -6,6 +6,7 @@
     python qgis_dev.py build      controlli + nuova versione + zip + backup, senza toccare QGIS
     python qgis_dev.py status     confronta versione sorgente / zip / installata
     python qgis_dev.py gui        prova nel QGIS 4 vero (senza finestra): schermate in tests/_gui_out
+    python qgis_dev.py lang       prova le 6 lingue nel QGIS vero e confronta tutti i testi visibili
     python qgis_dev.py shots      rifa le schermate della guida (italiano e inglese) in docs/img_it e docs/img_en
 
 Opzioni:  --no-bump  non incrementa la versione     --no-tests  salta i test (solo sintassi)
@@ -206,6 +207,30 @@ def gui():
     return 1
 
 
+def lang():
+    """Avvia il plugin nel QGIS vero in ognuna delle 6 lingue e confronta tutti i testi visibili."""
+    import json
+    import run_qgis
+    out = os.path.join(HERE, 'tests', '_gui_out_lang')
+    shutil.rmtree(out, ignore_errors=True)
+    os.makedirs(out)
+    run_qgis.run_gui(os.path.join(HERE, 'tests', 'smoke_lang.py'), os.path.join(out, 'profilo'), {'W2Q_OUT': out}, timeout=300)
+    rep = os.path.join(out, 'lang_report.json')
+    if not os.path.isfile(rep):
+        print("nessun rapporto: la prova non e' partita")
+        return 1
+    data = json.load(open(rep, encoding='utf-8'))
+    for m in data['ok']:
+        print('OK  ' + m)
+    for m in data['fail']:
+        print('FAIL ' + m)
+    print('testi raccolti per lingua:', data['texts'])
+    for code, same in data['same_as_italian'].items():
+        print("\n[%s] uguali all'italiano (%d): %s" % (code, len(same), ' | '.join(same)))
+    shutil.rmtree(out, ignore_errors=True)
+    return 1 if data['fail'] else 0
+
+
 def shots():
     """Schermate per la guida: il test nel QGIS vero, una volta per lingua, poi copia i PNG in docs/img_<lingua>."""
     import run_qgis
@@ -238,13 +263,15 @@ def main():
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     flags = set(a for a in sys.argv[1:] if a.startswith('--'))
     cmd = args[0] if args else 'run'
-    if cmd not in ('run', 'check', 'build', 'status', 'gui', 'shots') or flags - {'--no-bump', '--no-tests'}:
+    if cmd not in ('run', 'check', 'build', 'status', 'gui', 'shots', 'lang') or flags - {'--no-bump', '--no-tests'}:
         print(__doc__)
         return 2
     if cmd == 'status':
         return 0 if status() else 1
     if cmd == 'gui':
         return gui()
+    if cmd == 'lang':
+        return lang()
     if cmd == 'shots':
         return shots()
 

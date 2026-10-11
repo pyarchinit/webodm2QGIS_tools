@@ -9,6 +9,7 @@ from ..i18n import T
 from ..net import auth
 from ..net.client import WebODMClient
 from .icons import icon
+from .qt_helpers import ask_yes_no
 
 
 class ServerDialog(QDialog):
@@ -154,8 +155,7 @@ class ServerDialog(QDialog):
         if item is None:
             return
         s = item.data(Qt.ItemDataRole.UserRole)
-        if QMessageBox.question(self, T('Server WebODM'), T('Eliminare {n}?', n=s.name or s.url)) == \
-                QMessageBox.StandardButton.Yes:
+        if ask_yes_no(self, T('Server WebODM'), T('Eliminare {n}?', n=s.name or s.url)):
             self.ctl.remove_server(s.url)
             self._fill()
             if not self.list.count():

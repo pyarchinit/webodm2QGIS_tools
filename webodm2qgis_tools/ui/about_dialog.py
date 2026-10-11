@@ -10,6 +10,7 @@ from qgis.PyQt.QtWidgets import (QComboBox, QDialog, QDialogButtonBox, QFormLayo
 from .. import i18n
 from ..i18n import T
 from .icons import icon
+from .qt_helpers import localize_box
 
 LANG_KEY = 'webodm2qgis_tools/language'
 AUTHOR = 'Luca Mandolesi'
@@ -88,6 +89,7 @@ class AboutDialog(QDialog):
         lay.addWidget(guide)
         buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok)
         buttons.accepted.connect(self.accept)
+        localize_box(buttons)
         lay.addWidget(buttons)
 
     def _guide(self):

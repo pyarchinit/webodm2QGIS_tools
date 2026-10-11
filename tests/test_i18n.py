@@ -36,6 +36,8 @@ def keys_in_code():
                         pass
     for label, _g, _k in catalog.ASSETS.values():
         found[label] = 'catalog.ASSETS'
+    for dyn in ('info', 'attenzione', 'blocco', 'Annulla', 'Chiudi'):          # T(variabile): crs_dialog, qt_helpers
+        found[dyn] = 'T(variabile)'
     for n in ('georeferenced_model.laz', 'scaled_model.laz'):
         found[catalog.plugin_export_label(n)] = 'catalog.plugin_export_label'
     return found

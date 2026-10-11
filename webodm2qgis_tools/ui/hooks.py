@@ -7,6 +7,7 @@ from qgis.PyQt.QtWidgets import QDialog, QMessageBox
 from ..controller import Decision, UiHooks
 from ..i18n import T
 from .crs_dialog import CrsDialog
+from .qt_helpers import ask_yes_no
 from .session_dialog import SessionDialog
 from .shot_viewer import ShotViewer
 
@@ -32,7 +33,7 @@ class QtHooks(UiHooks):
         return dlg.decision()
 
     def confirm(self, text):
-        return QMessageBox.question(self.iface.mainWindow(), 'WebODM2QGIS-tools', text) == QMessageBox.StandardButton.Yes
+        return ask_yes_no(self.iface.mainWindow(), 'WebODM2QGIS-tools', text)
 
     def message(self, level, text):
         self.iface.messageBar().pushMessage('WebODM', text, _LEVELS.get(level, Qgis.MessageLevel.Info),

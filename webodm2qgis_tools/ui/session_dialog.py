@@ -10,6 +10,7 @@ from qgis.PyQt.QtWidgets import (QComboBox, QDialog, QDialogButtonBox, QFormLayo
 from ..core.session import Session, dirname_of
 from ..i18n import T
 from .icons import icon
+from .qt_helpers import localize_box, localize_file_widget
 
 RECENT = 'webodm2qgis_tools/recent_sessions'
 
@@ -64,6 +65,8 @@ class SessionDialog(QDialog):
         self.buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel)
         self.buttons.accepted.connect(self.accept)
         self.buttons.rejected.connect(self.reject)
+        localize_box(self.buttons)
+        localize_file_widget(self.folder)
         lay.addWidget(self.buttons)
         self._update()
 

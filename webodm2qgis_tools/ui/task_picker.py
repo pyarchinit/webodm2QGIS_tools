@@ -9,6 +9,7 @@ from ..core.models import status_label
 from ..core.urls import task_api
 from ..i18n import T
 from .icons import icon, light
+from .qt_helpers import localize_box
 
 
 class TaskPicker(QDialog):
@@ -73,6 +74,7 @@ class TaskPicker(QDialog):
         self.buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel)
         self.buttons.accepted.connect(self._accept)
         self.buttons.rejected.connect(self.reject)
+        localize_box(self.buttons)
         lay.addWidget(self.buttons)
         self.buttons.button(QDialogButtonBox.StandardButton.Ok).setEnabled(False)
 
